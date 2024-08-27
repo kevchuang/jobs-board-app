@@ -5,9 +5,11 @@ object Dependencies {
     val catsCoreVersion   = "2.12.0"
     val catsEffectVersion = "3.5.4"
     val circeVersion      = "0.14.9"
+    val ip4sVersion       = "3.5.0"
     val ironVersion       = "2.6.0"
     val kittenVersion     = "3.3.0"
     val log4CatsVersion   = "2.6.0"
+    val pureConfigVersion = "0.17.7"
     val tapirVersion      = "1.11.1"
     val skunkVersion      = "0.6.3"
     val weaverVersion     = "0.8.4"
@@ -37,6 +39,11 @@ object Dependencies {
 
     val log4cats: List[ModuleID] = List(
       "org.typelevel" %% "log4cats-slf4j" % V.log4CatsVersion
+    )
+
+    val pureConfig: List[ModuleID] = List(
+      "com.github.pureconfig" %% "pureconfig-core"        % V.pureConfigVersion,
+      "com.github.pureconfig" %% "pureconfig-cats-effect" % V.pureConfigVersion
     )
 
     val tapir: List[ModuleID] = List(

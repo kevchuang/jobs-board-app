@@ -17,6 +17,7 @@ lazy val core = (project in file("modules/core"))
         Libraries.kittens ++
         Libraries.log4cats ++
         Libraries.skunk ++
+        Libraries.pureConfig ++
         Libraries.tapir
   )
 
