@@ -4,6 +4,7 @@ import Dependencies.Libraries
 lazy val root = (project in file("."))
   .settings(organizationSettings)
   .settings(standardSettings)
+  .settings(name := "jobs-board-app")
   .aggregate(core, tests)
 
 lazy val core = (project in file("modules/core"))
