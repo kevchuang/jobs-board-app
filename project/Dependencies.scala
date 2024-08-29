@@ -5,6 +5,7 @@ object Dependencies {
     val catsCoreVersion   = "2.12.0"
     val catsEffectVersion = "3.5.4"
     val circeVersion      = "0.14.9"
+    val cirisVersion      = "3.6.0"
     val http4sVersion     = "0.23.27"
     val ip4sVersion       = "3.5.0"
     val ironVersion       = "2.6.0"
@@ -26,6 +27,11 @@ object Dependencies {
       "io.circe" %% "circe-core"    % V.circeVersion,
       "io.circe" %% "circe-generic" % V.circeVersion,
       "io.circe" %% "circe-parser"  % V.circeVersion
+    )
+
+    val ciris: List[ModuleID] = List(
+      "is.cir" %% "ciris"         % V.cirisVersion,
+      "is.cir" %% "ciris-refined" % V.cirisVersion
     )
 
     val http4s: List[ModuleID] = List(

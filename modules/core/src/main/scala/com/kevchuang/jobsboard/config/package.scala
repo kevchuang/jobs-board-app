@@ -1,10 +1,22 @@
 package com.kevchuang.jobsboard
 
 import com.comcast.ip4s.{Host, Port}
+import io.github.iltotore.iron.*
+import io.github.iltotore.iron.constraint.all.*
 import pureconfig.ConfigReader
 import pureconfig.error.CannotConvert
 
 package object config:
+  opaque type DatabaseName = String :| Not[Blank]
+  object DatabaseName extends RefinedTypeOps[String, Not[Blank], DatabaseName]
+
+  opaque type Password = String :| Not[Blank]
+  object Password extends RefinedTypeOps[String, Not[Blank], Password]
+
+  opaque type Username = String :| Not[Blank]
+  object Username extends RefinedTypeOps[String, Not[Blank], Username]
+
+  // config reader
   given ConfigReader[Host] =
     ConfigReader[String].emap: host =>
       Host

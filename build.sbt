@@ -14,6 +14,7 @@ lazy val core = (project in file("modules/core"))
     libraryDependencies ++=
       Libraries.cats ++
         Libraries.circe ++
+        Libraries.ciris ++
         Libraries.http4s ++
         Libraries.iron ++
         Libraries.kittens ++
