@@ -12,8 +12,7 @@ package object macros:
 
   inline given [A, C](using
       inline reader: ConfigReader[A],
-      inline constraint: Constraint[A, C],
-      inline show: Show[A]
+      inline constraint: Constraint[A, C]
   ): ConfigReader[A :| C] =
     reader
       .emap(value =>
