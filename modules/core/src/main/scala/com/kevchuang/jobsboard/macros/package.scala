@@ -1,6 +1,5 @@
 package com.kevchuang.jobsboard
 
-import cats.Show
 import io.github.iltotore.iron.*
 import pureconfig.ConfigReader
 import pureconfig.error.FailureReason
