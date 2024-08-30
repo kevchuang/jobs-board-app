@@ -1,0 +1,33 @@
+name: Scala
+
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java:
+          - graalvm11-ce
+    steps:
+      - uses: actions/checkout@v2.3.2
+
+      - name: "Cache for sbt & coursier ♨️"
+        uses: coursier/cache-action@v4.1
+
+      - name: "Starting up Postgres 🐳"
+        run: docker compose up -d
+
+      - name: "Install Nix ❄️"
+        uses: cachix/install-nix-action@v13
+
+      - name: "Run with ${{ matrix.java }} 🚀"
+        run: nix-shell --argstr jdk "${{ matrix.java }}" --run "sbt 'check;test;it:test'"
+
+      - name: "Shutting down Postgres 🐳"
+        run: docker compose down
