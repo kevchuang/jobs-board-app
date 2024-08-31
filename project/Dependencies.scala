@@ -44,7 +44,8 @@ object Dependencies {
     val iron: List[ModuleID] = List(
       "io.github.iltotore" %% "iron"       % V.ironVersion,
       "io.github.iltotore" %% "iron-cats"  % V.ironVersion,
-      "io.github.iltotore" %% "iron-circe" % V.ironVersion
+      "io.github.iltotore" %% "iron-circe" % V.ironVersion,
+      "io.github.iltotore" %% "iron-skunk" % V.ironVersion
     )
 
     val kittens: List[ModuleID] = List(

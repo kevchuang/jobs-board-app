@@ -5,11 +5,11 @@ import cats.effect.std.Console
 import cats.syntax.all.*
 import com.kevchuang.jobsboard.config.PostgreSQLConfig
 import fs2.io.net.Network
-import io.github.iltotore.iron.*
-import natchez.Trace.Implicits.noop
 import skunk.*
 import skunk.codec.text.*
 import skunk.implicits.*
+import io.github.iltotore.iron.*
+import natchez.Trace.Implicits.noop
 
 object PostgreSQL:
   private def checkConnection[F[_]: Concurrent](
