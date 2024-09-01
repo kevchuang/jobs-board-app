@@ -2,8 +2,6 @@ package com.kevchuang.jobsboard.sql
 
 import com.kevchuang.jobsboard.domain.job.*
 import skunk.*
-import skunk.codec.all.*
-import skunk.implicits.*
 
 object codecs:
   object job:
