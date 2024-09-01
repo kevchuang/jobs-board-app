@@ -1,6 +1,6 @@
 package com.kevchuang.jobsboard.services
 
-import cats.MonadThrow
+import cats.effect.MonadCancelThrow
 import cats.effect.kernel.Resource
 import cats.effect.std.UUIDGen
 import cats.syntax.all.*
@@ -9,14 +9,13 @@ import com.kevchuang.jobsboard.sql.codecs.job.given
 import skunk.*
 import skunk.implicits.*
 import io.github.iltotore.iron.*
-import io.github.iltotore.iron.skunk.{*, given}
 
 trait Jobs[F[_]]:
   def create(jobInfo: JobInfo): F[JobId]
 end Jobs
 
 object Jobs:
-  def make[F[_]: UUIDGen: MonadThrow](
+  def make[F[_]: UUIDGen: MonadCancelThrow](
       postgres: Resource[F, Session[F]]
   ): Jobs[F] =
     import JobsSQL.*
